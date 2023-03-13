@@ -43,7 +43,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'kens-test = bin.kens.test:main'
+            'kens-test = bin.kens-test:main'
         ]
     },
     license='License :: OSI Approved :: MIT License',
