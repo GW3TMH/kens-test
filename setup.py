@@ -43,8 +43,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            #'prosakart = bin.prosakart:main'
-            'package_name = bin.package_name:main'
+            'kens-test = bin.kens.test:main'
         ]
     },
     license='License :: OSI Approved :: MIT License',
