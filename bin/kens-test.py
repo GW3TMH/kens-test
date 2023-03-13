@@ -27,3 +27,5 @@ def main():
 
 if __name__=="__main__":
 	main()
+
+__version__='1.0'
