@@ -1,0 +1,69 @@
+name: kens-test               ### Program Name
+base: core18
+version: '1.0'
+summary: A simple tkinter demo.
+description:
+    Written in python3 this is an extremely simple
+    demonstration of creating a snap package.
+
+grade: devel                  # Needs to be changed later
+confinement: devmode          # Needs to be changed later
+
+apps:
+  kens-test:                  ### Program Name
+    adapter: full
+    command: bin/kens-test    ### Program Name
+    command-chain:
+      - bin/debian-multiarch-triplet-provider-launch
+      - bin/tcltk-launch
+
+    plugs:
+      - cups-control
+      - desktop
+      - desktop-legacy
+      - gsettings
+      - home
+      - network
+      - opengl
+      - removable-media
+      - unity7
+      - wayland
+      - x11
+
+parts:
+  debian-multiarch-triplet-provider-launch:
+    plugin: nil
+    stage-snaps:
+    - debian-multiarch-triplet-provider-launch
+
+  tcltk-launch:
+      plugin: nil
+      stage-snaps:
+        - tcltk-launch
+
+  kens-test:                  ### Program Name
+    plugin: python
+    python-version: python3
+    source: https://github.com/GW3TMH/kens-test.git ### Program Location
+    source-branch: main                             ### important check
+    build-packages: []
+    stage-packages:
+      - python3-tk
+      - python3-pil.imagetk
+      - fontconfig-config
+      - fonts-dejavu-core
+      - fonts-dejavu-extra
+      - locales-all
+    python-packages: []
+    after:
+      - desktop-glib-only
+
+  desktop-glib-only:
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-subdir: glib-only
+    plugin: make
+    build-packages:
+      - libglib2.0-dev
+    stage-packages:
+      - libglib2.0-bin
+
