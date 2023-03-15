@@ -1,4 +1,4 @@
-name: kens-test               ### Program Name
+name: kenstest                ### Program Name
 base: core18
 version: '1.0'
 summary: A simple tkinter demo.
@@ -10,9 +10,9 @@ grade: devel                  # Needs to be changed later
 confinement: devmode          # Needs to be changed later
 
 apps:
-  kens-test:                  ### Program Name
+  kenstest:                   ### Program Name
     adapter: full
-    command: bin/kens-test    ### Program Name
+    command: bin/kenstest     ### Program Name
     command-chain:
       - bin/debian-multiarch-triplet-provider-launch
       - bin/tcltk-launch
@@ -41,7 +41,7 @@ parts:
       stage-snaps:
         - tcltk-launch
 
-  kens-test:                  ### Program Name
+  kenstest:                   ### Program Name
     plugin: python
     python-version: python3
     source: https://github.com/GW3TMH/kens-test.git ### Program Location

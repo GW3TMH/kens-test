@@ -4,8 +4,8 @@
 from setuptools import setup
 
 
-package_name = 'kens-test'
-filename = 'kens-test/__init__.py'
+package_name = 'kenstest'
+filename = 'kenstest/__init__.py'
 
 
 def get_version():
@@ -43,7 +43,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'kens-test = bin.kens-test:main'
+            'kenstest = bin.kenstest:main'
         ]
     },
     license='License :: OSI Approved :: MIT License',
